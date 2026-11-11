@@ -6,7 +6,18 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
 from ..database import get_db
-from ..models import ActionItem, Comment, Meeting, Participant, Soundbite, Tag, TranscriptSegment, meeting_tags, utcnow
+from ..models import (
+    ActionItem,
+    Comment,
+    Meeting,
+    Participant,
+    Soundbite,
+    Tag,
+    TranscriptSegment,
+    meeting_participants,
+    meeting_tags,
+    utcnow,
+)
 from ..schemas import (
     ActionItemOut,
     ActionItemUpdate,
@@ -42,7 +53,12 @@ def me(db: Session = Depends(get_db)):
 
 @router.get("/participants", response_model=list[ParticipantOut], tags=["workspace"])
 def participants(db: Session = Depends(get_db)):
-    return db.scalars(select(Participant).order_by(Participant.name)).all()
+    """People who attend at least one meeting (filter and assignee pickers).
+    Rows left behind by deleted meetings are kept for reuse but not listed."""
+    in_meetings = select(meeting_participants.c.participant_id)
+    return db.scalars(
+        select(Participant).where(Participant.id.in_(in_meetings)).order_by(Participant.name)
+    ).all()
 
 
 @router.get("/tags", response_model=list[TagOut], tags=["workspace"])

@@ -2,7 +2,9 @@
 
 A full-stack clone of the Fireflies.ai meeting workspace. You can browse a meeting library, open an interactive transcript that stays in sync with a player, read AI summaries, outlines and action items, search every transcript, and upload or paste new transcripts to get notes in seconds.
 
-> **Live demo:** _add your Vercel URL here_ &nbsp;·&nbsp; **API docs:** _your Render URL_/docs
+> **Live demo:** https://fireflies-clone-beige.vercel.app &nbsp;·&nbsp; **API:** https://fireflies-clone-api-0f6f.onrender.com ([Swagger docs](https://fireflies-clone-api-0f6f.onrender.com/docs))
+>
+> The API runs on Render's free tier: after 15 minutes idle the first request can take about 50 seconds while it wakes up, and the demo data resets to the seeded meetings whenever it restarts.
 
 | | |
 |---|---|

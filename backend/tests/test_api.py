@@ -94,10 +94,23 @@ def test_duration_platform_filters_and_bulk_delete(client):
     zoom = client.get("/api/meetings", params={"platform": "zoom"}).json()
     assert zoom["total"] >= 1 and all(m["platform"] == "zoom" for m in zoom["items"])
 
-    ids = [client.post("/api/meetings", json={"title": f"Temp {i}"}).json()["id"] for i in range(2)]
+    ids = [
+        client.post("/api/meetings", json={"title": f"Temp {i}", "participants": [{"name": "Zed Temporary"}]}).json()["id"]
+        for i in range(2)
+    ]
+    assert any(p["name"] == "Zed Temporary" for p in client.get("/api/participants").json())
     r = client.post("/api/meetings/bulk-delete", json={"ids": ids + [999999]})
     assert r.json() == {"deleted": 2}
     assert all(client.get(f"/api/meetings/{i}").status_code == 404 for i in ids)
+    # people only in deleted meetings no longer appear in pickers
+    assert all(p["name"] != "Zed Temporary" for p in client.get("/api/participants").json())
+
+
+def test_ask_talk_time_matches_speaker_panel(client):
+    mid = client.get("/api/meetings").json()["items"][0]["id"]
+    top = client.get(f"/api/meetings/{mid}").json()["speaker_stats"][0]
+    answer = client.post(f"/api/meetings/{mid}/ask", json={"question": "Who spoke the most?"}).json()["answer"]
+    assert f"{top['participant']['name']} ({round(top['talk_pct'])}%)" in answer
 
 
 def test_validation_errors(client):

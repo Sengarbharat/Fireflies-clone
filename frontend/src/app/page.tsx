@@ -2,7 +2,7 @@
 
 import { ArrowRight, CalendarDays, CheckSquare, Clock, Mic, UploadCloud } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useSWR from "swr";
 import { type ActionItemChange, ActionItemRow } from "@/components/action-items/ActionItemRow";
 import { CreateMeetingModal } from "@/components/meetings/CreateMeetingModal";
@@ -13,9 +13,16 @@ import { api, fetcher } from "@/lib/api";
 import { useInvalidate } from "@/lib/hooks";
 import type { ActionItem, ActionItemWithMeeting, MeetingList, User } from "@/lib/types";
 
-function greeting() {
-  const h = new Date().getHours();
-  return h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
+/** Time-of-day greeting, computed only in the browser: this page is prerendered
+ * at build time (server clock, UTC), so rendering it there would mismatch the
+ * viewer's local time during hydration. */
+function useGreeting() {
+  const [text, setText] = useState("Welcome back");
+  useEffect(() => {
+    const h = new Date().getHours();
+    setText(h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening");
+  }, []);
+  return text;
 }
 
 function Stat({ icon: Icon, label, value }: { icon: typeof Mic; label: string; value: React.ReactNode }) {
@@ -33,6 +40,7 @@ export default function HomePage() {
   const toast = useToast();
   const invalidate = useInvalidate();
   const [uploadOpen, setUploadOpen] = useState(false);
+  const greeting = useGreeting();
   const { data: me } = useSWR<User>("/api/me", fetcher);
   const { data: all } = useSWR<MeetingList>("/api/meetings?page_size=100", fetcher);
   const { data: tasks } = useSWR<ActionItemWithMeeting[]>("/api/action-items?completed=false", fetcher);
@@ -55,7 +63,7 @@ export default function HomePage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-6 sm:px-8">
       <h1 className="text-2xl font-semibold">
-        {greeting()}
+        {greeting}
         {me ? `, ${me.name.split(" ")[0]}` : ""}
       </h1>
       <p className="mt-1 text-sm text-muted">Here&apos;s what&apos;s happening across your meetings.</p>

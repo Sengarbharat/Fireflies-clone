@@ -89,11 +89,11 @@ def _rules_answer(meeting: Meeting, question: str) -> AskResponse:
         return AskResponse(answer=meeting.summary.overview, citations=[], generated_by="rules")
 
     if re.search(r"\b(who (attended|was there|joined|spoke)|participants|attendees|speakers?)\b", q):
+        # Same formula as the speaker panel (services.meetings.to_detail).
         talk = Counter()
-        for i, s in enumerate(meeting.segments):
-            nxt = meeting.segments[i + 1].start_ms if i + 1 < len(meeting.segments) else meeting.duration_sec * 1000
+        for s in meeting.segments:
             if s.speaker:
-                talk[s.speaker.name] += max(0, nxt - s.start_ms)
+                talk[s.speaker.name] += max(0, s.end_ms - s.start_ms)
         total = sum(talk.values()) or 1
         parts = [f"{name} ({round(100 * ms / total)}%)" for name, ms in talk.most_common()]
         return AskResponse(
