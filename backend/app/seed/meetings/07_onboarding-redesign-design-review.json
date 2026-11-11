@@ -1,0 +1,342 @@
+{
+  "title": "Design Review - Onboarding Redesign",
+  "date": "2026-11-05T16:30:00Z",
+  "platform": "google_meet",
+  "duration": 880,
+  "tags": [
+    "Design",
+    "Product"
+  ],
+  "participants": [
+    {
+      "name": "Sofia Alvarez",
+      "email": "sofia.alvarez@northwindlabs.io"
+    },
+    {
+      "name": "Alex Rivera",
+      "email": "alex@northwindlabs.io"
+    },
+    {
+      "name": "Mei Tanaka",
+      "email": "mei.tanaka@northwindlabs.io"
+    },
+    {
+      "name": "Priya Nair",
+      "email": "priya.nair@northwindlabs.io"
+    },
+    {
+      "name": "Hannah Schmidt",
+      "email": "hannah.schmidt@northwindlabs.io"
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 0.0,
+      "text": "Okay, I'm sharing my screen. Thanks for making time. Today I want feedback on the onboarding redesign, three screens in particular, the connect-data step, the sync waiting state, and the first-value dashboard. Please be blunt."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 18.4,
+      "text": "Blunt is the default here. Before we start, remind us of the principles you designed around."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 46.7,
+      "text": "Three things. One, never leave the user with a blank screen. Two, always tell them what's happening and how long it will take. Three, the first thing they see should already be useful. Everything else flows from those."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 74.6,
+      "text": "So this is the connect-data step. Instead of a long list of twenty connectors, we show the four most common ones first, Segment, Snowflake, BigQuery and a CSV upload, with a search box for the rest."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 96.9,
+      "text": "I like the shorter list. In support, about seventy percent of the tickets I see are for those four, and the rest are people looking for something we don't even support."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 117.2,
+      "text": "Technically, can we cheaply show which connectors are unsupported? Right now the list is a hardcoded array and adding a coming soon badge is trivial."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 139.3,
+      "text": "I'd rather not show things we don't have. It makes the page feel broken. But I do want a request a connector link at the bottom, so we learn what's missing."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 159.9,
+      "text": "I'd push on that, a request link is a promise. Someone has to read the requests. Who triages them?"
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 177.9,
+      "text": "I can take it, it will go into our support queue and I'll summarize monthly for product."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 199.8,
+      "text": "Fine. Let's keep it. One question about the CSV upload, does it make sense as a top-four option? It's a different kind of user."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 220.9,
+      "text": "It's there for trial users without a warehouse. About fifteen percent of signups say in the survey that they just want to try it with a spreadsheet."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 232.4,
+      "text": "Okay, that's a good reason. Moving on. Show us the sync waiting state."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 256.7,
+      "text": "This is the important one. A stepper shows connecting, importing history, and building your dashboard. Underneath, a time range, usually five to ten minutes, and a button that says explore a sample dashboard while you wait."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 273.2,
+      "text": "What happens when the estimate is wrong? We know the row count estimate is off about a third of the time."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 300.8,
+      "text": "The copy says about, and the range widens if the sync runs long. If it goes past fifteen minutes the message changes to this is taking longer than usual and we'll email you when it's done."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 319.6,
+      "text": "I'd suggest the email goes out in all cases, not only when it's slow. Some people close the tab at minute one."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 337.7,
+      "text": "That's a good point. I'll make it a checkbox that is on by default, notify me by email when ready."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 361.8,
+      "text": "I have a concern about the sample dashboard. If it looks too good, people think it's their real data and get confused later when it's empty or different."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 383.6,
+      "text": "I'd labeled it with a banner, sample data, but you're right that the banner is subtle. Let me make it more obvious, maybe a different color and a persistent chip in the header."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 402.3,
+      "text": "A chip is good. I've seen customers screenshot a sample dashboard and send it to their boss as if it were their own numbers. A persistent label would help there."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 423.9,
+      "text": "Engineering note, the sample dashboard reuses the real components with fixture data, so the effort is manageable. But the persistent chip needs to be part of the shared layout, not bolted on each page."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 438.5,
+      "text": "I can put it in the app shell. It's about half a day."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 455.2,
+      "text": "Perfect. Now, the first-value dashboard. This is what appears once the sync completes."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 485.6,
+      "text": "We auto-build one dashboard from a template, with four tiles, active users, a retention curve, top events, and a funnel. The template depends on what we detect in their data. There's a short product tour, three steps, and a prompt to invite a teammate."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 508.6,
+      "text": "I like the retention curve as a hero because it's what people come for. But four tiles at once is a lot. Could we start with two, active users and retention, and reveal the rest after the tour?"
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 528.2,
+      "text": "Hmm, I'm not sure. I worry that hiding the funnel makes the product feel smaller. Our research said people want to see depth immediately."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 545.0,
+      "text": "Then let's test it. Two variants in the prototype and show them to five users. I'd rather have evidence than argue."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 563.3,
+      "text": "Fair. I can run five sessions next week, I've got a recruiting list from Hannah."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 579.0,
+      "text": "I'll give you six names, some from the churned small accounts so we hear from people who gave up."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 597.7,
+      "text": "What about the invite a teammate prompt? Product-wise, that's an expansion lever, but it comes after the first value, not before."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 620.9,
+      "text": "Agreed, and it's relevant to pricing. If seats are what we bill on, then prompting an invite looks like an upsell. We should think about how that interacts with the platform fee idea."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 634.9,
+      "text": "I'll word it neutrally, add your team, for now. We can revisit the copy once pricing is decided."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 658.9,
+      "text": "One more thing before we finish. SSO. If a company uses SSO, the onboarding flow is totally different, the user arrives through the identity provider and the admin is already set up. Did you design for that?"
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 685.6,
+      "text": "I did not, and that's a gap. I'd been designing only for self-serve signups. Let me sketch an enterprise variant where the admin configures SSO first and users skip the account creation screen."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 701.9,
+      "text": "Yes please. Lumen Freight and Harbor and Pine will both go through this path."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 720.6,
+      "text": "The settings page for SAML metadata upload is already in progress. I can show you the current build next week so the design matches."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 736.2,
+      "text": "That would be great. Let me summarize what I heard so we're aligned."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 766.0,
+      "text": "The connector list stays at four plus search, with a request link. The email notification is on by default. The sample dashboard gets a persistent chip. We'll test two variants of the first-value dashboard, two tiles versus four, and I'll sketch an SSO variant."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 777.9,
+      "text": "That's right. Dates?"
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 792.3,
+      "text": "Updated designs by Tuesday, and usability sessions the week after."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 803.7,
+      "text": "I'll send you the six interview candidates today."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 820.7,
+      "text": "And I'll build the persistent sample data chip in the app shell and send a preview link."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 841.6,
+      "text": "I'll check the tile question again after the sessions, and I'll make sure the pricing discussion considers the invite prompt."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 854.3,
+      "text": "Thanks Sofia, this is looking good."
+    }
+  ],
+  "summary": {
+    "overview": "Sofia presented the onboarding redesign built on three principles: no blank screens, always show time expectations, and make the first view useful. The group reviewed a shortened connector list, a sync waiting state with a range-based estimate and sample dashboard, and an auto-built first-value dashboard. Feedback led to a default-on email notification, a more obvious persistent sample-data chip, and a plan to usability test two-tile against four-tile versions. A gap around SSO customers was noted, and Sofia will sketch an enterprise onboarding variant.",
+    "notes": [
+      "The redesign follows three principles: never a blank screen, always show what is happening and how long, and make the first screen useful.",
+      "The connect step shows four connectors first, Segment, Snowflake, BigQuery and CSV upload, with search and a request-a-connector link.",
+      "Hannah will triage connector requests through the support queue and summarize them monthly for product.",
+      "The sync waiting state uses a three-stage stepper and a time range of about five to ten minutes, widening if the sync runs long.",
+      "The notify-by-email checkbox will be on by default because some users close the tab within a minute.",
+      "A persistent sample-data chip in the header will prevent customers from mistaking demo numbers for their own.",
+      "Alex wants to test two tiles versus four on the first-value dashboard in five usability sessions, while Sofia worries fewer tiles feel smaller.",
+      "The invite-a-teammate prompt interacts with seat-based pricing, so its copy will stay neutral until pricing is decided.",
+      "The design had not covered SSO customers, so Sofia will sketch an enterprise variant for Lumen Freight and Harbor and Pine."
+    ],
+    "keywords": [
+      "onboarding",
+      "design review",
+      "sample dashboard",
+      "connectors",
+      "sync",
+      "usability testing",
+      "SSO",
+      "pricing",
+      "first-value",
+      "app shell"
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Review goals and context",
+      "start": 0.0,
+      "summary": "Sofia explains what she wants feedback on and the redesign principles."
+    },
+    {
+      "title": "Connect-data step",
+      "start": 74.6,
+      "summary": "The group reviews the shortened connector list and the empty state."
+    },
+    {
+      "title": "Sync waiting state",
+      "start": 232.4,
+      "summary": "Discussion of the progress indicator, estimates, and the sample dashboard."
+    },
+    {
+      "title": "First-value dashboard",
+      "start": 455.2,
+      "summary": "The team reviews the auto-built dashboard and the tour that follows."
+    },
+    {
+      "title": "SSO and enterprise flow",
+      "start": 658.9,
+      "summary": "The group notes the onboarding differences for single sign-on customers."
+    },
+    {
+      "title": "Decisions and next steps",
+      "start": 736.2,
+      "summary": "Sofia recaps the feedback and the group assigns follow-ups."
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Update the onboarding designs with the sample data chip, default email notification and an SSO enterprise variant",
+      "assignee": "Sofia Alvarez",
+      "due_date": "2026-11-10",
+      "completed": false,
+      "start": 792.3
+    },
+    {
+      "text": "Send Sofia six customer names for onboarding usability sessions, including some churned small accounts",
+      "assignee": "Hannah Schmidt",
+      "due_date": "2026-11-05",
+      "completed": true,
+      "start": 803.7
+    },
+    {
+      "text": "Build the persistent sample-data chip in the app shell and share a preview link",
+      "assignee": "Mei Tanaka",
+      "due_date": "2026-11-09",
+      "completed": false,
+      "start": 820.7
+    },
+    {
+      "text": "Review usability results on the two-tile versus four-tile first-value dashboard and decide",
+      "assignee": "Alex Rivera",
+      "due_date": "2026-11-18",
+      "completed": false,
+      "start": 841.6
+    }
+  ]
+}

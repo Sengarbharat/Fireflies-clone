@@ -1,0 +1,321 @@
+{
+  "title": "Customer Discovery Call - Harbor and Pine",
+  "date": "2026-10-13T17:30:00Z",
+  "platform": "google_meet",
+  "duration": 878,
+  "tags": [
+    "Customer",
+    "Product"
+  ],
+  "participants": [
+    {
+      "name": "Alex Rivera",
+      "email": "alex@northwindlabs.io"
+    },
+    {
+      "name": "Hannah Schmidt",
+      "email": "hannah.schmidt@northwindlabs.io"
+    },
+    {
+      "name": "Rachel Kim",
+      "email": "rachel.kim@harborandpine.com"
+    },
+    {
+      "name": "Jonas Weber",
+      "email": "jonas.weber@harborandpine.com"
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Alex Rivera",
+      "start": 0.0,
+      "text": "Hi Rachel, hi Jonas, thanks so much for making the time. I'm Alex, I lead product here, and Hannah from customer success is on as well. Is it okay if we record and take notes for the team?"
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 21.9,
+      "text": "Of course, that's fine. Nice to meet you both. I run retail operations at Harbor and Pine, and Jonas is our lead data analyst."
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 40.3,
+      "text": "Hello. I mostly live in spreadsheets and our BI tool, so I'm curious about what you can do beyond that."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 64.1,
+      "text": "Great. We've been trying to understand how multi-store retailers actually track customers across channels, so mostly I want to listen. Could you walk us through how you look at customer behavior today?"
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 98.7,
+      "text": "So we have forty-two stores and an online shop. In stores we have a loyalty app, online we have the usual web analytics, and honestly those two worlds don't talk to each other. I can tell you what a customer bought online or what they bought in a store, but not how often the same person does both."
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 123.4,
+      "text": "And it's mostly manual. Every Monday I export loyalty data, export the ecommerce orders, and try to match them on email address. About fifteen to twenty percent don't match because people use different emails."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 143.5,
+      "text": "That matching problem is pretty common with our retail customers. Do you know roughly how many of your customers shop both channels?"
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 167.7,
+      "text": "Our best guess is around nineteen percent, but it's a guess. If I had to bet, the real number is higher and those people spend a lot more."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 184.3,
+      "text": "What do you do with that information when you get it? Who consumes the Monday report?"
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 207.6,
+      "text": "The merchandising team and the regional managers. The managers want to know which promotions are bringing people back. Right now they basically wait a month to see if a promotion worked."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 218.7,
+      "text": "A month feels like forever. What would a good turnaround be?"
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 239.9,
+      "text": "Honestly, a week. If I knew within a week that the autumn loyalty bonus was working, I could extend it or kill it before we've burned the budget."
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 264.4,
+      "text": "I'd say retention cohorts are the thing. How many customers who bought in September came back in October, split by store region and by whether they used a coupon."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 290.3,
+      "text": "That's helpful. We do cohort retention, but I want to ask about the identity piece since you said emails don't match. If we could stitch the loyalty ID and the web customer ID together, would that be a deal breaker if it wasn't perfect?"
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 313.3,
+      "text": "Not a deal breaker, no. If we got to ninety percent matching I'd be thrilled. What worries me more is the data volume, we have about three million events a day in peak season."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 335.5,
+      "text": "Three million a day is well within what we handle. We have customers at ten times that. The more interesting question is where the data sits today."
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 359.7,
+      "text": "Mostly in Snowflake. Our data team loads orders and loyalty events nightly. So we'd prefer something that reads from the warehouse rather than adding yet another tracking script."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 381.6,
+      "text": "That's a really useful preference. We have a Snowflake connector, and we're about to ship a fix for timeouts on large warehouses, so that is timely. Does your warehouse have a lot of historical data?"
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 397.5,
+      "text": "Four years of orders. It's big. The last connector we tried choked on it."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 415.3,
+      "text": "We'd do a backfill in windows rather than pulling it all at once, so that shouldn't be an issue. I can walk Jonas through the approach separately."
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 432.8,
+      "text": "Can I ask about price? We're not a huge company and I've been burned by tools that look cheap and then bill us by event."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 453.5,
+      "text": "Totally fair. Right now it's seat-based with a tracked user definition. We're actually rewriting the pricing page because people find it confusing, so your feedback is useful. What would feel fair to you?"
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 473.6,
+      "text": "Something predictable. A flat fee per month with a clear cap. I can explain a flat fee to my CFO, I can't explain an invoice that moves around."
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 494.7,
+      "text": "And I'd want the whole analytics team to have access, not just two seats. If I'm the only person who can log in, nobody else benefits and it dies in a quarter."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 517.7,
+      "text": "That makes sense, and it connects to something we hear from other customers. Per-seat pricing discourages sharing. We're discussing it internally, so I'll keep that in mind."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 530.4,
+      "text": "Hannah here, quickly, do you use Okta or something similar for login? Security usually gets involved."
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 548.4,
+      "text": "We use Azure AD for everything. Our security team will absolutely require single sign-on before we put customer data into a new tool. That's a hard stop."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 569.0,
+      "text": "Good to know. SAML SSO for Azure AD is on our near-term list, we're scoping it now. I can't promise a date on this call, but it's targeted for early November."
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 589.8,
+      "text": "Early November is okay if the pilot can start before that on a test environment without our real customer data."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 612.6,
+      "text": "We can do that. A pilot with a sanitized sample from the warehouse, then expand once SSO is live. How would you measure whether the pilot worked?"
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 632.8,
+      "text": "If I could produce the Monday cohort report without touching a spreadsheet, that's a win. And if the regional managers can answer their own promotion questions without asking me."
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 657.0,
+      "text": "And one more, the onboarding. Last tool took us two months to get value from. I need to see something useful in a couple of weeks or my team loses patience."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 677.0,
+      "text": "Onboarding is exactly what we're working on right now. We're redesigning the first-run experience so people see a working dashboard sooner. Hannah can be your dedicated contact during the pilot."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 693.7,
+      "text": "Happy to. I'd suggest a kickoff next week, a thirty minute technical session with Jonas on the Snowflake setup, and a check-in at two weeks."
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 707.8,
+      "text": "That works for me. Can you send me a list of the tables and columns you'd need?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 723.0,
+      "text": "Yes, Hannah will send a short data checklist today. Rachel, anything else you want us to think about before we wrap up?"
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 745.1,
+      "text": "Just one thing, a competitor pitched us last week with free implementation. If you can include some onboarding help in the pilot, that would go a long way."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 765.2,
+      "text": "Understood, I'll talk to our sales lead about what we can offer. I'll come back to you by Friday."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 777.3,
+      "text": "And I'll send the data checklist and a proposed kickoff time after the call."
+    },
+    {
+      "speaker": "Jonas Weber",
+      "start": 789.1,
+      "text": "Perfect. I'll talk to our data team about getting a sanitized sample ready."
+    },
+    {
+      "speaker": "Rachel Kim",
+      "start": 803.3,
+      "text": "Thanks both, this was useful. I'm cautiously optimistic."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 815.6,
+      "text": "Thank you both, this was really helpful for us too. Talk soon."
+    }
+  ],
+  "summary": {
+    "overview": "Alex and Hannah spoke with Rachel Kim and Jonas Weber of Harbor and Pine, a 42-store retailer, about how they analyze customer behavior. Their biggest pain is that loyalty app and ecommerce data cannot be matched, with 15 to 20 percent of customers failing to match by email, and a monthly lag before they learn whether promotions worked. They prefer a Snowflake-based approach, want predictable flat pricing with team-wide access, and require Azure AD single sign-on before any real data goes in. The team agreed to propose a pilot on sanitized data and to follow up on implementation help.",
+    "notes": [
+      "Harbor and Pine runs 42 stores plus an online shop, and loyalty data and ecommerce data are not connected.",
+      "Weekly matching on email address fails for 15 to 20 percent of customers, so cross-channel behavior is largely guesswork.",
+      "Jonas estimates about 19 percent of customers shop both channels and expects the real number is higher.",
+      "Regional managers wait roughly a month to learn whether a promotion worked and want that cut to a week.",
+      "Their data lives in Snowflake with four years of orders and about 3 million events a day at peak.",
+      "Rachel wants predictable flat monthly pricing with a clear cap and warns that per-seat pricing would limit team adoption.",
+      "Azure AD single sign-on is a hard requirement from their security team before any customer data is loaded.",
+      "A pilot on a sanitized sample can start before SSO ships, which is targeted for early November.",
+      "Success means producing the Monday cohort report without spreadsheets and seeing value within about two weeks of onboarding."
+    ],
+    "keywords": [
+      "Harbor and Pine",
+      "retail",
+      "identity matching",
+      "Snowflake",
+      "cohort retention",
+      "pricing",
+      "SSO",
+      "Azure AD",
+      "onboarding",
+      "pilot"
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Introductions and goals",
+      "start": 0.0,
+      "summary": "Alex sets up the call and asks Harbor and Pine about their current analytics setup."
+    },
+    {
+      "title": "Current reporting workflow",
+      "start": 184.3,
+      "summary": "Rachel and Jonas describe the manual Monday report and who consumes it."
+    },
+    {
+      "title": "Data sources and Snowflake",
+      "start": 359.7,
+      "summary": "Jonas explains they keep data in Snowflake and prefer a warehouse-native approach."
+    },
+    {
+      "title": "Pricing and budget",
+      "start": 453.5,
+      "summary": "Rachel shares what pricing structure would feel fair and her concerns about overage."
+    },
+    {
+      "title": "Security and SSO",
+      "start": 569.0,
+      "summary": "Rachel confirms Azure AD single sign-on is a hard requirement from their security team."
+    },
+    {
+      "title": "Pilot success criteria",
+      "start": 657.0,
+      "summary": "They define success as an automated cohort report and quick time to value."
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Check with Marcus on what implementation help can be included in the pilot and reply to Rachel",
+      "assignee": "Alex Rivera",
+      "due_date": "2026-10-16",
+      "completed": true,
+      "start": 765.2
+    },
+    {
+      "text": "Send Jonas the Snowflake data checklist and propose a kickoff time",
+      "assignee": "Hannah Schmidt",
+      "due_date": "2026-10-13",
+      "completed": true,
+      "start": 777.3
+    },
+    {
+      "text": "Write up the call findings on cross-channel identity matching and share them with the product team",
+      "assignee": "Alex Rivera",
+      "due_date": "2026-10-15",
+      "completed": true,
+      "start": 815.6
+    }
+  ]
+}

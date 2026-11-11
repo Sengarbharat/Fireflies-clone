@@ -1,0 +1,331 @@
+{
+  "title": "Candidate Interview - Senior Frontend Engineer",
+  "date": "2026-10-29T19:00:00Z",
+  "platform": "zoom",
+  "duration": 995,
+  "tags": [
+    "Hiring",
+    "Engineering"
+  ],
+  "participants": [
+    {
+      "name": "Priya Nair",
+      "email": "priya.nair@northwindlabs.io"
+    },
+    {
+      "name": "Mei Tanaka",
+      "email": "mei.tanaka@northwindlabs.io"
+    },
+    {
+      "name": "Alex Rivera",
+      "email": "alex@northwindlabs.io"
+    },
+    {
+      "name": "Elena Petrova",
+      "email": "elena.petrova@protonmail.com"
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Priya Nair",
+      "start": 0.0,
+      "text": "Hi Elena, thanks for joining. I'm Priya, I manage the engineering team here, and Mei Tanaka from our frontend team is here too. Alex from product will drop in for the last part. How are you doing today?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 17.4,
+      "text": "Hi, I'm doing well, thanks. Excited to chat. I've been following Beacon for a bit and I like the product direction."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 40.2,
+      "text": "Great. We'll do about ten minutes on your background, then a discussion on a frontend design problem, then time for your questions. Could you start by giving us the short version of where you've been?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 74.6,
+      "text": "Sure. I've been a frontend engineer for about eight years. The last four were at a logistics software company where I led a team of five building a dashboarding product, React and TypeScript, mostly data heavy tables and charts. Before that I was at an agency, which taught me a lot about shipping fast and dealing with messy requirements."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 87.6,
+      "text": "What was the hardest technical problem on the dashboard product?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 119.1,
+      "text": "Performance of large tables. Customers wanted to see up to two hundred thousand rows with live filtering. We ended up virtualizing the rows and moving the sorting and filtering into a web worker, and we got interaction time down from around four seconds to under three hundred milliseconds."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 139.4,
+      "text": "That's interesting. How did you keep the worker and the UI state in sync without it getting messy?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 169.8,
+      "text": "We treated the worker as a tiny server. The UI sends a query object, the worker returns a result set with a version number, and the UI drops any result older than the latest request. That solved the stale response problem we had at the beginning."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 186.9,
+      "text": "Nice, that's a pattern we'd actually find useful. What was your role in the team beyond coding?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 211.9,
+      "text": "I ran the technical planning, did code reviews, and mentored two juniors. I also set up our design system with the designers, so components were documented and tested in Storybook. I like that kind of work because it speeds everyone up."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 224.2,
+      "text": "Did you use visual regression testing for the design system?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 246.1,
+      "text": "We did, Chromatic. It caught a few nasty issues but the cost and the noise were a real tradeoff. We ended up limiting it to the core components."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 273.8,
+      "text": "Okay, let's move on to a design problem. Imagine you're building the setup checklist for our product. A new user connects a data source and the sync takes between two and twenty minutes. How would you design the frontend experience for that wait?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 304.3,
+      "text": "First question, do we know how long it will take? If we have an estimate, I'd show progress with an honest range and update it as we learn more. If we don't, I'd avoid a fake progress bar and show stages instead, like connecting, importing history, building your first dashboard."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 326.0,
+      "text": "We do have a rough estimate, it's based on the row count and it's wrong about a third of the time."
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 354.6,
+      "text": "Then I'd show the range, say about five to ten minutes, and avoid committing to an exact number. Behind the scenes I'd poll with exponential backoff, or use server-sent events if the backend supports it, since polling a thousand tenants every second is wasteful."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 372.6,
+      "text": "We do have an event stream, but it's not exposed to the client yet. What would you do about people closing the tab?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 397.6,
+      "text": "Persist the state on the server so they can return to it, and send an email when the sync completes. And during the wait I'd let them explore a sample dashboard so the time isn't dead."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 413.9,
+      "text": "That's exactly the direction we're going, actually. Mei, do you want to dig into anything technical?"
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 434.9,
+      "text": "Yes. Say the sample dashboard uses the same components as the real one. How would you structure state so switching from the sample to real data doesn't cause a flash of empty content?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 460.1,
+      "text": "I'd use a data fetching library with a cache keyed by workspace, like React Query, and keep the sample data as the placeholder data for the same query key. When the real data arrives, the component rerenders with no layout change, because the shapes are identical."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 475.9,
+      "text": "And how do you test that flow?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 505.7,
+      "text": "Component tests for the states, loading, sample, real, and error, and one end to end test for the full transition. I'm careful with end to end tests though, I'd keep them few because they get flaky. We had a suite that failed about one run in ten and it cost us a lot of trust."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 523.6,
+      "text": "We have that exact problem right now, about one in six. How did you fix it?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 540.0,
+      "text": "Mostly by mocking the slow endpoints, using stable test data, and deleting tests that didn't earn their keep. Fewer, better tests worked better than more."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 560.9,
+      "text": "Good answer. Now I want to ask about disagreement. Tell me about a time you disagreed with a designer or a product manager on something important."
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 599.9,
+      "text": "There was a case where product wanted to ship an inline editing feature in a table in two weeks and I thought the accessibility would be poor. I wrote up what keyboard and screen reader behavior we'd be missing and proposed a smaller first version, with a clear date for the full thing. We shipped the smaller one, and the full one three weeks later."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 610.9,
+      "text": "How did the product manager react?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 638.8,
+      "text": "Initially annoyed, honestly. But the written comparison helped because it made the tradeoff concrete rather than a feeling. I try not to say no, I try to offer the next best option with the cost attached."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 665.6,
+      "text": "Sorry to join late, I'm Alex, I lead product. That answer sounds like a good one to me, and I'm the one who'd be on the other side of it. Can I ask what kind of environment you do your best work in?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 690.8,
+      "text": "Small teams with a clear problem and direct access to customers. I get a lot of energy from seeing how real people use what I built. I struggle in places where the engineers are far from the users."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 716.7,
+      "text": "We're pretty close, our support team sits in our channel and we do customer calls every week. One more question, what would you want from a manager in the first ninety days?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 732.9,
+      "text": "Clear expectations, a first project that actually ships, and honest feedback early. I'd rather know in week three than week twelve."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 747.0,
+      "text": "Great. Do you have questions for us?"
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 767.1,
+      "text": "Yes, a few. What does the frontend stack look like today, and how much of it is legacy? And what's the on-call situation?"
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 792.0,
+      "text": "It's React and TypeScript with Vite, about eighty percent migrated from an old build setup. We have a rotating on-call, but frontend is rarely paged, it's maybe once a quarter."
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 808.9,
+      "text": "That's good to hear. And what are the biggest challenges the team will face this quarter?"
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 834.6,
+      "text": "We're shipping SAML SSO, a redesigned onboarding flow, and an ingestion rewrite on the backend. For frontend it's mostly the onboarding work and the SSO settings page, so it's a busy quarter."
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 849.6,
+      "text": "That sounds like an interesting place to land. What are the next steps on your side?"
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 874.1,
+      "text": "We'll debrief this afternoon, and if it's a yes, we'd schedule a final round with Liam our CEO and Sofia from design. I'll email you by Friday either way."
+    },
+    {
+      "speaker": "Elena Petrova",
+      "start": 890.4,
+      "text": "Perfect, thank you both, and Alex, nice to meet you."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 905.1,
+      "text": "Thanks Elena, it was great talking to you."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 918.4,
+      "text": "I'll schedule the debrief and email Elena a decision by Friday."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 938.1,
+      "text": "And if we go ahead, I'll set up the final round with Liam and Sofia for next week."
+    }
+  ],
+  "summary": {
+    "overview": "Priya and Mei interviewed Elena Petrova for the senior frontend engineer role, with Alex joining for the last part. Elena has eight years of experience, most recently leading a five-person dashboard team, and described cutting large-table interaction time from four seconds to under 300 milliseconds with virtualization and a web worker. In a design exercise she proposed honest range-based progress, server-persisted state, and sample data during long syncs, and she gave pragmatic answers about flaky end-to-end tests and disagreeing with product. Next steps are a debrief and a decision by Friday.",
+    "notes": [
+      "Elena has eight years of frontend experience, with the last four leading a team of five on a dashboard product in React and TypeScript.",
+      "She improved a 200 thousand row table from four seconds to under 300 milliseconds using virtualization and a web worker with versioned results.",
+      "For the long data sync wait she proposed an honest time range, staged progress, server-side persistence, and an email on completion.",
+      "She would use a cache keyed by workspace with sample data as placeholder data so the switch to real data causes no layout flash.",
+      "Her previous team had a suite failing one run in ten, which she fixed by mocking slow endpoints and deleting low-value tests, matching Beacon's current one-in-six problem.",
+      "She described resolving a disagreement with a product manager by writing up the accessibility tradeoff and shipping a smaller first version.",
+      "She does her best work on small teams close to customers and wants clear expectations and early feedback in her first 90 days.",
+      "The frontend stack is React, TypeScript and Vite, roughly 80 percent migrated, with frontend paged about once a quarter.",
+      "A debrief follows, and a final round with Liam and Sofia is planned if the panel approves."
+    ],
+    "keywords": [
+      "frontend",
+      "interview",
+      "React",
+      "TypeScript",
+      "performance",
+      "web worker",
+      "testing",
+      "flaky tests",
+      "onboarding",
+      "hiring"
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Introductions",
+      "start": 0.0,
+      "summary": "Priya and Mei introduce themselves and set out the format of the interview."
+    },
+    {
+      "title": "Background and experience",
+      "start": 74.6,
+      "summary": "Elena summarizes eight years of frontend work, most recently leading a dashboard team."
+    },
+    {
+      "title": "Frontend design discussion",
+      "start": 273.8,
+      "summary": "Elena designs a progress experience for a long-running data sync."
+    },
+    {
+      "title": "State management and code quality",
+      "start": 434.9,
+      "summary": "Mei probes data fetching, caching, and testing practices."
+    },
+    {
+      "title": "Collaboration and disagreement",
+      "start": 560.9,
+      "summary": "Elena describes a past conflict with product and how it was resolved."
+    },
+    {
+      "title": "Candidate questions and wrap-up",
+      "start": 716.7,
+      "summary": "Elena asks about the team, the stack, and next steps."
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Write up interview feedback on Elena Petrova and share it with the hiring panel",
+      "assignee": "Mei Tanaka",
+      "due_date": "2026-10-29",
+      "completed": true,
+      "start": 905.1
+    },
+    {
+      "text": "Email Elena Petrova with the hiring decision or next steps",
+      "assignee": "Priya Nair",
+      "due_date": "2026-10-30",
+      "completed": true,
+      "start": 918.4
+    },
+    {
+      "text": "Schedule the final interview round with Liam and Sofia if the panel approves",
+      "assignee": "Alex Rivera",
+      "due_date": "2026-11-04",
+      "completed": true,
+      "start": 938.1
+    }
+  ]
+}

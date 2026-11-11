@@ -1,0 +1,317 @@
+{
+  "title": "Sales Pipeline Review",
+  "date": "2026-11-03T18:00:00Z",
+  "platform": "teams",
+  "duration": 847,
+  "tags": [
+    "Sales",
+    "Planning"
+  ],
+  "participants": [
+    {
+      "name": "Marcus Johnson",
+      "email": "marcus.johnson@northwindlabs.io"
+    },
+    {
+      "name": "Aisha Rahman",
+      "email": "aisha.rahman@northwindlabs.io"
+    },
+    {
+      "name": "Hannah Schmidt",
+      "email": "hannah.schmidt@northwindlabs.io"
+    },
+    {
+      "name": "Alex Rivera",
+      "email": "alex@northwindlabs.io"
+    },
+    {
+      "name": "Liam O'Connor",
+      "email": "liam@northwindlabs.io"
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Marcus Johnson",
+      "start": 0.0,
+      "text": "Okay, let's get started. This is the Q4 pipeline review, I want to go deal by deal for anything over thirty thousand, and then talk forecast. Aisha, can you share the CRM view?"
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 28.1,
+      "text": "Sharing now. Total open pipeline is one point nine million, of which eight hundred forty thousand is commit or best case. Our Q4 target is six hundred fifty thousand in new ARR, so on paper we're at about one point three times coverage on the committed side."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 43.8,
+      "text": "One point three is thin. I'd like two times on committed by the end of the month. Where are the gaps?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 62.2,
+      "text": "Mostly stage three, where deals are stalling in security review. Seven deals are waiting on SOC 2 documents or SSO, and that's about three hundred ten thousand in ARR."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 84.4,
+      "text": "That matches what we're building. SAML SSO is in staging for Okta and Azure AD is next, so we're targeting a general release in the second week of November."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 104.4,
+      "text": "Good, because I've been telling people the middle of November. Let's go through the deals. First up, Harbor and Pine."
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 133.1,
+      "text": "Harbor and Pine is a forty-two store retailer, around sixty-two thousand in ARR if we get the platform tier. They're in a pilot on sanitized data. Rachel Kim is the champion, Jonas Weber is the technical lead, and the CFO hasn't been engaged yet."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 160.0,
+      "text": "The pilot is going well from my side. Jonas built the Monday cohort report in the first week and he's now asking about identity stitching for loyalty IDs. The risk is they want flat fee pricing and we only have per-seat today."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 177.4,
+      "text": "Right, that's the pricing model question. Aisha, what did we quote them?"
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 210.0,
+      "text": "Twelve seats at the Growth tier, but that came to about forty-four thousand and Rachel said their whole analytics team and regional managers would need access, so it's closer to thirty seats. That would push the price to well over sixty and the pricing feels punitive for them."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 235.5,
+      "text": "This is exactly why we're modeling a platform fee. I'd quote them a flat annual number with a usage cap and see how they react. Marcus, can you give Aisha a number that works?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 261.4,
+      "text": "I think fifty-four thousand for the year with five million events a month included is defensible. Aisha, put that in a proposal and mark it as a pilot-to-contract special, not a new list price."
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 275.5,
+      "text": "Got it. I'll draft the proposal by Wednesday and get your sign-off before it goes out."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 289.3,
+      "text": "Next, Lumen Freight. They're the logistics prospect, about forty-eight thousand. What's the status?"
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 314.6,
+      "text": "Lumen said SSO is a blocker, flat out. Their IT lead, Tyrone, has said he can't approve the vendor without SAML. We've told them mid-November and they said that works but they want a written commitment."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 333.2,
+      "text": "I'm not comfortable with a written date for a feature that's still in staging. What can we say that is true?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 355.9,
+      "text": "We can say it's in active development with Okta working in staging and general release targeted for the second week of November, and that we'll give them early access to the staging environment to test with their IdP."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 377.4,
+      "text": "Early access is a good offer, it makes them feel involved. Aisha, can you send that language to Tyrone? Alex, please confirm the dates before it goes out."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 394.7,
+      "text": "I'll confirm with Priya today and reply to you by tomorrow morning."
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 417.5,
+      "text": "Sending it right after that. One more on this one, they asked about SOC 2 and I told them Type 1 is done and Type 2 is in progress."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 433.4,
+      "text": "That's right. Type 2 report is expected in January, so make sure you keep saying in progress rather than done."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 446.0,
+      "text": "Okay, next. Cedar Health, thirty-eight thousand, stuck at stage three for six weeks. What's happening?"
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 463.8,
+      "text": "Their sponsor went on leave and nobody else has picked it up. I tried the VP of operations twice and got no response."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 485.0,
+      "text": "I wouldn't chase that one any further this quarter. Move it to nurture and put it back in Q1. That will clean up the forecast."
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 496.0,
+      "text": "Understood, moving it to nurture."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 517.0,
+      "text": "On the churn side, I want to flag a renewal at risk. Brightpath Education, thirty-one thousand, renews in December. Their admin left the company and the new person hasn't logged in once."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 532.3,
+      "text": "That's classic. Is there a path to get the new admin engaged?"
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 554.0,
+      "text": "I'm going to send a personalized training invite and offer a thirty minute walkthrough. If they don't respond in a week, I'll ask Aisha to approach the executive sponsor."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 571.3,
+      "text": "Please do. And add a note to your health check list, because that's the kind of thing a product health score would flag if we had one."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 589.9,
+      "text": "That's on the roadmap for Q1, by the way, once the ingestion rewrite is complete."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 609.1,
+      "text": "Great. Let's talk forecast, since we're running out of time. Aisha, what do you think lands this quarter?"
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 639.2,
+      "text": "If SSO ships on time and Harbor and Pine signs, I can see Lumen, Harbor and Pine, and two of the mid-market deals closing, which gets us to about four hundred twenty thousand. The rest depends on how quickly legal turns around contracts."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 653.6,
+      "text": "Four hundred twenty on a six-fifty target is a real gap. What would close it?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 679.2,
+      "text": "Honestly, a couple of larger deals starting now won't close in Q4. So I think we land at four hundred to four-fifty and have a strong Q1 start. I'd rather be honest with the board."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 701.8,
+      "text": "I would too. Let me think about how to frame it. Let's take the forecast as four fifty commit, and I'll mention SSO as the driver."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 724.2,
+      "text": "Fine. Last thing, discounting. A couple of reps have been going to twenty percent without approval. I want any discount above fifteen percent to need my sign-off."
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 742.5,
+      "text": "That's fine. Should the annual discount of fifteen percent be separate from that?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 761.5,
+      "text": "No, fifteen total including annual. Anything beyond that comes to me. I'll write the policy and share it today."
+    },
+    {
+      "speaker": "Aisha Rahman",
+      "start": 772.5,
+      "text": "Understood. Thanks everyone."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 783.9,
+      "text": "Thanks, Marcus. Please send the updated forecast sheet by Friday."
+    }
+  ],
+  "summary": {
+    "overview": "Marcus led a deal-by-deal review of the Q4 pipeline, which stands at 1.9 million open with 840 thousand in commit or best case against a 650 thousand new ARR target. The main bottleneck is security review, with seven deals worth about 310 thousand dollars waiting on SSO or SOC 2. The group agreed a flat-fee proposal of 54 thousand dollars for the Harbor and Pine pilot, careful language about the SSO release date for Lumen Freight, moving Cedar Health to nurture, and a new discount approval rule. The forecast was set at about 450 thousand.",
+    "notes": [
+      "Open pipeline is 1.9 million dollars, with 840 thousand in commit or best case against a 650 thousand dollar new ARR target.",
+      "Seven deals worth roughly 310 thousand dollars are stalled at security review waiting on SSO or SOC 2 documents.",
+      "Harbor and Pine will receive a flat-fee proposal of 54 thousand dollars per year with 5 million events a month included.",
+      "Per-seat quoting for Harbor and Pine pushed the price over 60 thousand dollars because their whole analytics team would need access.",
+      "Lumen Freight, worth about 48 thousand dollars, will be offered early access to the staging SSO environment instead of a written date commitment.",
+      "SOC 2 Type 1 is complete and Type 2 is in progress with a report expected in January.",
+      "Cedar Health at 38 thousand dollars moves to nurture after a six-week stall caused by its sponsor going on leave.",
+      "Brightpath Education, a 31 thousand dollar December renewal, is at risk because its admin left and the replacement has never logged in.",
+      "The Q4 forecast was lowered to about 450 thousand dollars, and discounts above 15 percent total will require VP Sales approval."
+    ],
+    "keywords": [
+      "pipeline",
+      "forecast",
+      "SSO",
+      "SOC 2",
+      "pricing",
+      "Harbor and Pine",
+      "Lumen Freight",
+      "churn risk",
+      "discount policy",
+      "security review"
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Pipeline overview",
+      "start": 0.0,
+      "summary": "Marcus opens with the Q4 pipeline totals and coverage."
+    },
+    {
+      "title": "Harbor and Pine deal",
+      "start": 104.4,
+      "summary": "Review of the retail pilot and what it would take to close."
+    },
+    {
+      "title": "Lumen Freight and SSO deals",
+      "start": 289.3,
+      "summary": "Deals blocked on security review and SSO timing."
+    },
+    {
+      "title": "Stalled deals and churn risks",
+      "start": 446.0,
+      "summary": "The group discusses Cedar Health and a renewal at risk."
+    },
+    {
+      "title": "Forecast and next steps",
+      "start": 609.1,
+      "summary": "Marcus and Aisha agree on the commit number and the actions for the month."
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Draft the Harbor and Pine proposal at 54 thousand dollars for the year with 5 million events a month included and get Marcus to approve it",
+      "assignee": "Aisha Rahman",
+      "due_date": "2026-11-05",
+      "completed": false,
+      "start": 275.5
+    },
+    {
+      "text": "Confirm the SSO general release date with Priya and share approved language for customers waiting on SSO",
+      "assignee": "Alex Rivera",
+      "due_date": "2026-11-04",
+      "completed": false,
+      "start": 394.7
+    },
+    {
+      "text": "Reach out to Brightpath Education's new admin with a training invite and escalate to the executive sponsor if there is no response in a week",
+      "assignee": "Hannah Schmidt",
+      "due_date": "2026-11-10",
+      "completed": false,
+      "start": 571.3
+    },
+    {
+      "text": "Write the discount approval policy that requires VP Sales sign-off above 15 percent total and share it with the sales team",
+      "assignee": "Marcus Johnson",
+      "due_date": "2026-11-04",
+      "completed": false,
+      "start": 761.5
+    }
+  ]
+}

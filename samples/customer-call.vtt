@@ -1,0 +1,61 @@
+WEBVTT
+
+00:00:02.000 --> 00:00:09.500
+<v Hannah Schmidt>Thanks for joining, Dana. Today I'd like to hear how your team is using Beacon since the rollout last month.
+
+00:00:10.000 --> 00:00:21.000
+<v Dana Whitfield>Happy to. Honestly, adoption has been uneven. The marketing team lives in it, but the support managers rarely log in.
+
+00:00:22.000 --> 00:00:31.500
+<v Hannah Schmidt>That's useful to know. Do you have a sense of why the support managers aren't using it?
+
+00:00:32.000 --> 00:00:48.000
+<v Dana Whitfield>They told me the dashboards don't show what they care about, which is time to first response by customer tier. We'd have to build that ourselves and nobody has the time.
+
+00:00:49.000 --> 00:00:58.000
+<v Hannah Schmidt>We have a template for support metrics. I can share it today and we can adapt it together.
+
+00:00:59.000 --> 00:01:12.500
+<v Dana Whitfield>That would help. Another thing, we're about to renew in January and my CFO is asking why we pay for forty seats when only twenty-two people log in.
+
+00:01:13.000 --> 00:01:24.000
+<v Hannah Schmidt>That's a fair question. We're actually looking at a flat platform fee so you wouldn't have to count seats at all.
+
+00:01:25.000 --> 00:01:35.000
+<v Dana Whitfield>Interesting. A predictable number would be easier to defend. When would that be available?
+
+00:01:36.000 --> 00:01:47.500
+<v Hannah Schmidt>It's planned for new customers in January and for renewals after that. I'll ask Marcus to walk you through the options before your renewal date.
+
+00:01:48.000 --> 00:01:58.000
+<v Dana Whitfield>Please do. Also, we need single sign-on. Our IT team has started enforcing it for every vendor.
+
+00:01:59.000 --> 00:02:10.000
+<v Hannah Schmidt>SAML SSO is shipping in mid-November, with Okta and Azure AD supported. Which provider do you use?
+
+00:02:11.000 --> 00:02:17.500
+<v Dana Whitfield>Okta. That works for us, then.
+
+00:02:18.000 --> 00:02:30.000
+<v Hannah Schmidt>Great. Can I ask about the Snowflake connection? Last month you mentioned some sync failures.
+
+00:02:31.000 --> 00:02:46.000
+<v Dana Whitfield>It's much better since the fix. We had two failed syncs in September and none in October. The remaining problem is that the data takes about four hours to refresh.
+
+00:02:47.000 --> 00:02:58.000
+<v Hannah Schmidt>Four hours is longer than I'd expect. Let me check your sync schedule, it may be set to the slowest interval.
+
+00:02:59.000 --> 00:03:08.000
+<v Dana Whitfield>That would be a simple fix. If we can get it down to one hour, the support leads would care a lot more.
+
+00:03:09.000 --> 00:03:21.000
+<v Hannah Schmidt>I'll look at that today. Anything else on your list before we wrap up?
+
+00:03:22.000 --> 00:03:33.000
+<v Dana Whitfield>Just the onboarding for new hires. We lost a week of a new analyst's time because the setup checklist wasn't clear.
+
+00:03:34.000 --> 00:03:46.000
+<v Hannah Schmidt>That's feedback we're hearing a lot, and a redesigned onboarding flow is in progress. I'll send you a preview when it's ready.
+
+00:03:47.000 --> 00:03:55.000
+<v Dana Whitfield>Perfect, thank you. Talk next week.

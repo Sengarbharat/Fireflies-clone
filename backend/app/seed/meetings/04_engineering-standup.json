@@ -1,0 +1,317 @@
+{
+  "title": "Engineering Standup",
+  "date": "2026-10-27T14:00:00Z",
+  "platform": "google_meet",
+  "duration": 735,
+  "tags": [
+    "Engineering",
+    "Weekly"
+  ],
+  "participants": [
+    {
+      "name": "Priya Nair",
+      "email": "priya.nair@northwindlabs.io"
+    },
+    {
+      "name": "Daniel Okafor",
+      "email": "daniel.okafor@northwindlabs.io"
+    },
+    {
+      "name": "Mei Tanaka",
+      "email": "mei.tanaka@northwindlabs.io"
+    },
+    {
+      "name": "Tomas Novak",
+      "email": "tomas.novak@northwindlabs.io"
+    },
+    {
+      "name": "Alex Rivera",
+      "email": "alex@northwindlabs.io"
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Priya Nair",
+      "start": 0.0,
+      "text": "Morning everyone. Let's keep this quick, standup, not a meeting. Daniel, you want to start?"
+    },
+    {
+      "speaker": "Daniel Okafor",
+      "start": 24.0,
+      "text": "Sure. SAML login flow with Okta is working end to end in staging. I got the assertion parsing done yesterday and the ACS endpoint is validated. Azure AD is next and I expect some quirks with their attribute names."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 37.5,
+      "text": "Any blockers?"
+    },
+    {
+      "speaker": "Daniel Okafor",
+      "start": 55.5,
+      "text": "One. The admin settings page needs a design for uploading the metadata XML, and I don't have it yet. Sofia mentioned it's coming but I'd like a date."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 67.2,
+      "text": "I'll chase that. Mei, you're on the settings page, right?"
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 94.1,
+      "text": "Yeah, I started on the layout using the placeholder from last week. I can build the upload component without the final design and swap the styling later. Biggest risk is the error states, because SAML metadata files fail in a lot of different ways."
+    },
+    {
+      "speaker": "Daniel Okafor",
+      "start": 113.3,
+      "text": "I can give you a list of error codes. There are about eight cases like expired certificate, wrong entity ID, malformed XML. I'll drop it in the channel."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 128.0,
+      "text": "Perfect, that would help a lot."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 145.7,
+      "text": "Quick note from the product side, Harbor and Pine needs Azure AD specifically, so I'd prioritize that over the Okta polish. Is that okay with everyone?"
+    },
+    {
+      "speaker": "Daniel Okafor",
+      "start": 160.1,
+      "text": "Fine by me. I'll flip the order and do Azure AD first, Okta cleanup after."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 171.1,
+      "text": "Great. Tomas, ingestion?"
+    },
+    {
+      "speaker": "Tomas Novak",
+      "start": 198.0,
+      "text": "I'm about forty percent through the batching changes. The idempotency keys are in a branch and I've been replaying last week's production traffic against it. So far duplicates dropped from about two percent to under zero point one."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 210.9,
+      "text": "That's huge. And latency?"
+    },
+    {
+      "speaker": "Tomas Novak",
+      "start": 236.2,
+      "text": "That's the annoying part. P95 for dashboard queries on the biggest tenant went from 2.1 seconds to 2.9 seconds on Thursday, and I think it's an unrelated index change, not my work. I'd like another pair of eyes on it."
+    },
+    {
+      "speaker": "Daniel Okafor",
+      "start": 253.5,
+      "text": "I can look after standup. Was it the migration that added the composite index on events?"
+    },
+    {
+      "speaker": "Tomas Novak",
+      "start": 273.3,
+      "text": "That's my guess. I checked the query plan and it's doing a sequential scan on one of the partitions."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 294.4,
+      "text": "Okay, Daniel and Tomas, pair on that this morning, and if it's the index we roll it back before the weekend."
+    },
+    {
+      "speaker": "Tomas Novak",
+      "start": 308.6,
+      "text": "Sounds good. I'll post findings in the incident thread."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 325.1,
+      "text": "Mei, what's the status of the onboarding checklist work?"
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 352.0,
+      "text": "The guided checklist component is about sixty percent done. I'm using the new progress bar and it already handles the sync estimate. The thing slowing me down is our end to end test suite. About one in six runs fails for no reason."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 366.9,
+      "text": "Is that the Playwright flakiness we talked about?"
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 385.6,
+      "text": "Yes. It's mostly the dashboard loading assertions, they time out when the test database is slow. I'm thinking of adding explicit waits and seeding smaller data."
+    },
+    {
+      "speaker": "Daniel Okafor",
+      "start": 408.5,
+      "text": "I'd be careful with explicit waits, they hide real regressions. Maybe mock the slow endpoint instead and keep one real test for the full path."
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 429.3,
+      "text": "That's a fair point. I'll try mocking the slow query for the checklist tests and keep a single full flow test."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 443.3,
+      "text": "How much does the flakiness cost you right now, in time?"
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 459.4,
+      "text": "Probably a half day a week across the team, rerunning builds. It's not catastrophic but it's annoying."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 473.1,
+      "text": "Then it's worth fixing. Mei, can you take the cleanup and report back by Wednesday next week?"
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 484.1,
+      "text": "Yes, I'll own it."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 497.5,
+      "text": "Alex, anything from product?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 515.6,
+      "text": "Two things. First, is the Snowflake timeout fix live? Harbor and Pine has four years of data and I told them it's solved."
+    },
+    {
+      "speaker": "Daniel Okafor",
+      "start": 535.9,
+      "text": "It's live since the twenty-second. I tested against a warehouse with about eight hundred million rows and it completed the backfill in windows without timing out."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 554.9,
+      "text": "Great, thank you. Second, can we get the sanitized pilot environment for Harbor and Pine ready by next Wednesday? Hannah is scheduling the kickoff for then."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 565.9,
+      "text": "What does that involve, exactly?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 584.2,
+      "text": "A tenant seeded with their sample data, SSO disabled for now, and rate limits turned up a bit. I think it's mostly configuration."
+    },
+    {
+      "speaker": "Daniel Okafor",
+      "start": 607.2,
+      "text": "It's about a day of setup if the sample data comes in the format we asked for. I can do it, assuming nothing else catches fire."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 623.4,
+      "text": "Add it to the board. Daniel, you have SSO, the pilot tenant, and the index issue. Is that too much?"
+    },
+    {
+      "speaker": "Daniel Okafor",
+      "start": 645.5,
+      "text": "It's a lot. The pilot tenant is the one I can hand off if needed. Maybe Tomas can set it up since he already knows the data loader."
+    },
+    {
+      "speaker": "Tomas Novak",
+      "start": 663.6,
+      "text": "I can take the pilot tenant once the index thing is sorted, that's fine."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 679.7,
+      "text": "Okay, anything else? Any other blockers or help needed?"
+    },
+    {
+      "speaker": "Mei Tanaka",
+      "start": 697.5,
+      "text": "Just a reminder that I'm out Friday afternoon for a dentist appointment, so I'll hand off the upload component review to Daniel."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 708.5,
+      "text": "Noted. Thanks everyone, that's it, back to work."
+    }
+  ],
+  "summary": {
+    "overview": "A short engineering standup covering SAML SSO progress, the ingestion rewrite, and onboarding frontend work. Daniel has Okta login working in staging and will switch to Azure AD first because Harbor and Pine requires it. Tomas reports idempotency keys cut duplicate events from about 2 percent to under 0.1 percent but found a P95 latency regression likely caused by an index migration. Mei is 60 percent through the guided onboarding checklist and will clean up flaky end-to-end tests, and Tomas will set up the sanitized pilot tenant.",
+    "notes": [
+      "SAML login with Okta works end to end in staging, and Azure AD is being prioritized next because Harbor and Pine needs it.",
+      "The SSO admin settings page is waiting on a design for uploading metadata XML, and about eight error cases need handling.",
+      "Idempotency keys in the ingestion rewrite cut duplicate events from roughly 2 percent to under 0.1 percent in replayed production traffic.",
+      "P95 dashboard query latency on the largest tenant rose from 2.1 to 2.9 seconds, probably because of a composite index migration.",
+      "The guided onboarding checklist component is about 60 percent complete and already handles the sync estimate.",
+      "About one in six end-to-end test runs fails randomly, costing the team roughly half a day per week.",
+      "Daniel argued explicit waits hide regressions, so the plan is to mock the slow endpoint and keep one full-flow test.",
+      "The Snowflake timeout fix has been live since the 22nd and was tested on a warehouse of about 800 million rows.",
+      "Tomas will set up the sanitized pilot tenant for Harbor and Pine before next Wednesday's kickoff."
+    ],
+    "keywords": [
+      "standup",
+      "SAML SSO",
+      "Azure AD",
+      "ingestion",
+      "idempotency",
+      "latency",
+      "index",
+      "onboarding",
+      "Playwright",
+      "pilot tenant"
+    ]
+  },
+  "chapters": [
+    {
+      "title": "SSO progress",
+      "start": 0.0,
+      "summary": "Daniel reports on the SAML integration and what is blocking it."
+    },
+    {
+      "title": "Ingestion rewrite",
+      "start": 171.1,
+      "summary": "Tomas shares progress on batching, idempotency keys, and a latency regression."
+    },
+    {
+      "title": "Onboarding frontend work",
+      "start": 325.1,
+      "summary": "Mei reports on the guided checklist and a flaky test suite."
+    },
+    {
+      "title": "Product questions and release timing",
+      "start": 497.5,
+      "summary": "Alex asks about demo timing and release plans for the customer pilot."
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Finish Azure AD SAML login in staging before polishing the Okta flow",
+      "assignee": "Daniel Okafor",
+      "due_date": "2026-10-30",
+      "completed": true,
+      "start": 160.1
+    },
+    {
+      "text": "Investigate the P95 latency regression on the largest tenant and roll back the composite index change if confirmed",
+      "assignee": "Tomas Novak",
+      "due_date": "2026-10-28",
+      "completed": true,
+      "start": 294.4
+    },
+    {
+      "text": "Reduce end to end test flakiness by mocking the slow dashboard endpoint and keeping one full-flow test",
+      "assignee": "Mei Tanaka",
+      "due_date": "2026-11-04",
+      "completed": false,
+      "start": 473.1
+    },
+    {
+      "text": "Set up the sanitized pilot tenant for Harbor and Pine with their sample data",
+      "assignee": "Tomas Novak",
+      "due_date": "2026-10-28",
+      "completed": true,
+      "start": 663.6
+    }
+  ]
+}

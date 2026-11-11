@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* Class-based dark mode, toggled on <html> by ThemeProvider. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand purple, close to the Fireflies workspace accent. */
+  --color-brand-50: #f4f1ff;
+  --color-brand-100: #ebe5ff;
+  --color-brand-200: #d7ccff;
+  --color-brand-300: #b9a5ff;
+  --color-brand-400: #9a7bff;
+  --color-brand-500: #7c55fb;
+  --color-brand-600: #6a3ef0;
+  --color-brand-700: #5a2fd4;
+  --color-brand-800: #4a27ad;
+  --color-brand-900: #3d2389;
+}
+
+:root {
+  --surface: #ffffff;
+  --surface-muted: #f7f7fb;
+  --border: #ebebf2;
+  --text: #1c1b22;
+  --text-muted: #6b6a78;
+}
+
+.dark {
+  --surface: #17161d;
+  --surface-muted: #111015;
+  --border: #2a2933;
+  --text: #ecebf3;
+  --text-muted: #9a99a8;
+  color-scheme: dark;
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--surface-muted);
+    color: var(--text);
+  }
+  * {
+    border-color: var(--border);
+  }
+  ::selection {
+    background: var(--color-brand-200);
+  }
+}
+
+@layer utilities {
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  .bg-surface-muted {
+    background-color: var(--surface-muted);
+  }
+  .text-muted {
+    color: var(--text-muted);
+  }
+  .border-base {
+    border-color: var(--border);
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #d4d3df transparent;
+  }
+  .dark .scrollbar-thin {
+    scrollbar-color: #3a3945 transparent;
+  }
+}
+
+mark {
+  background: #fde68a;
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+.dark mark {
+  background: rgba(250, 204, 21, 0.35);
+}
+mark.current {
+  background: #f59e0b;
+  color: #fff;
+}
+
+@keyframes toast-in {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-toast-in {
+  animation: toast-in 0.18s ease-out;
+}
+
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media print {
+  aside,
+  header,
+  .no-print {
+    display: none !important;
+  }
+  main {
+    overflow: visible !important;
+  }
+}

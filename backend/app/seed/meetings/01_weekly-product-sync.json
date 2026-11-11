@@ -1,0 +1,338 @@
+{
+  "title": "Weekly Product Sync",
+  "date": "2026-10-06T16:00:00Z",
+  "platform": "zoom",
+  "duration": 880,
+  "tags": [
+    "Product",
+    "Weekly"
+  ],
+  "participants": [
+    {
+      "name": "Alex Rivera",
+      "email": "alex@northwindlabs.io"
+    },
+    {
+      "name": "Priya Nair",
+      "email": "priya.nair@northwindlabs.io"
+    },
+    {
+      "name": "Sofia Alvarez",
+      "email": "sofia.alvarez@northwindlabs.io"
+    },
+    {
+      "name": "Hannah Schmidt",
+      "email": "hannah.schmidt@northwindlabs.io"
+    },
+    {
+      "name": "Marcus Johnson",
+      "email": "marcus.johnson@northwindlabs.io"
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Alex Rivera",
+      "start": 0.0,
+      "text": "Okay, I think everyone's here. Thanks for joining, let's get going, we've got a lot on the board this week. Quick agenda, onboarding numbers first, then the SSO work, then pricing page feedback, and we'll finish on churn."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 17.0,
+      "text": "Sounds good. I'll flag up front that two of my people are out Thursday and Friday, so anything engineering needs to land by Wednesday."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 34.7,
+      "text": "Noted. Sofia, do you want to kick off with the onboarding data since you've been living in it?"
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 57.1,
+      "text": "Yeah, so I pulled the funnel from Beacon itself, which is a bit meta. Of the accounts that signed up in September, only 41 percent finished the setup checklist within seven days. That's down from 47 percent in August."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 82.5,
+      "text": "That tracks with what I'm hearing in support. People get stuck on the data source step. They connect Segment and then nothing shows up for like twenty minutes and they assume it's broken."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 103.6,
+      "text": "Right, and that's exactly where we lose them. Step three of the checklist has a 38 percent drop-off on its own, it's the single biggest cliff in the flow."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 122.3,
+      "text": "Okay so what's the hypothesis? Is it the wait time or is it that we don't tell them what to expect?"
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 146.9,
+      "text": "I think it's mostly the second one. We show a spinner and a generic message. If we showed a progress estimate and let them explore a sample workspace in the meantime, I'd bet we recover a good chunk."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 164.7,
+      "text": "A sample workspace is not free though. Daniel estimated about two sprints to seed demo data that looks realistic and doesn't leak anything from real tenants."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 179.6,
+      "text": "Two sprints is steep for a bet. Is there a cheaper version, like a static demo dashboard with canned data?"
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 202.6,
+      "text": "There is. I can design a read-only demo board that uses a fixture file. Engineering cost would be maybe three or four days, mostly wiring it into the empty state."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 220.3,
+      "text": "Three or four days I can live with. I'd want to timebox it and measure before we commit to the full sample workspace."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 237.3,
+      "text": "Agreed, let's do the cheap version first and look at checklist completion over two weeks. Sofia, can you get a design to Priya by Friday?"
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 254.0,
+      "text": "Yep, I'll have a Figma link for the empty state and the progress estimate copy by end of day Friday."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 271.2,
+      "text": "Great. Next topic, SSO. Marcus, this is mostly yours, I know it's come up in three deals now."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 296.3,
+      "text": "Four, actually. Harbor and Pine, a logistics prospect, and two mid-market deals in the pipeline all listed SAML SSO as a hard requirement in security review. One of them, about forty-eight thousand in ARR, said they can't sign without it."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 314.4,
+      "text": "What do they need exactly? Just SAML with Okta and Azure AD, or SCIM provisioning too?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 329.8,
+      "text": "Okta and Azure AD for SAML for sure. SCIM came up on one call but nobody called it a blocker."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 353.6,
+      "text": "Okay, then SAML only for the first release. We have the identity provider library picked, Daniel thinks it's about four weeks including the admin settings page and testing against both providers."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 373.8,
+      "text": "Four weeks gets us to early November if we start next sprint. Can we gate it to the Enterprise plan? That also helps the pricing conversation."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 397.7,
+      "text": "I'd actually push back on that a little. Two of those four deals are on the Growth plan today and they'd see it as a bait and switch if we say SSO is enterprise only."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 423.2,
+      "text": "Fair, but if we give it to everyone we lose an easy upsell lever. Let's hold that for the pricing discussion and not decide it here. Priya, please write up the SSO scope so we can react to something concrete."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 443.1,
+      "text": "I'll have a one-pager by Friday, with the open questions about SCIM and the audit log clearly marked."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 456.8,
+      "text": "Perfect. Hannah, pricing page feedback, what are you seeing from customers?"
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 476.7,
+      "text": "The most common complaint is that they can't tell what counts as a tracked user. Three customers last week asked whether anonymous visitors are billed. It's not obvious from the page at all."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 497.7,
+      "text": "Yes, I hear that on sales calls too. Our deck explains it fine but the website doesn't, and prospects compare us to Mixpanel's wording."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 521.2,
+      "text": "So the page needs a plain definition of a tracked user and a tiny calculator, maybe. Does anyone object to putting pricing page clarity in this sprint?"
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 538.0,
+      "text": "I can do copy and layout, but we should agree on whether the annual discount is ten or fifteen percent before I design it."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 554.2,
+      "text": "Fifteen. Finance wants to push annual contracts because they help cash flow, and fifteen is what competitors are doing."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 568.6,
+      "text": "Okay, fifteen for annual, and I'll take the tracked user definition copy and send it to legal."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 586.0,
+      "text": "One more pricing note, a customer asked if we can do monthly overage billing instead of a surprise on the invoice. Probably something to park for later."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 603.9,
+      "text": "Parking it, but let's note it. Okay, last topic, churn. Hannah, the number?"
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 630.1,
+      "text": "Logo churn in September was 3.1 percent, which is up from 2.4 in August. Of the nine accounts that cancelled, five were small teams under ten seats that never got past the setup checklist."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 648.0,
+      "text": "So that's the onboarding problem again, just showing up later in the funnel."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 668.0,
+      "text": "Exactly. The other four were bigger accounts and two of them mentioned they couldn't get Snowflake sync working reliably."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 687.6,
+      "text": "The Snowflake connector has a known issue with large warehouses timing out. Daniel has a fix in review, should go out in the next release."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 709.1,
+      "text": "Good. Hannah, can you set up a short churn interview list for the five small accounts, I'd like to talk to at least three of them."
+    },
+    {
+      "speaker": "Hannah Schmidt",
+      "start": 725.7,
+      "text": "Will do. I'll ask Aisha to help with outreach since she knows a couple of them from the trial stage."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 745.5,
+      "text": "One thing before we close, do we want a health score in the product that flags these accounts before they cancel? Sales would use that."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 770.8,
+      "text": "Love the idea, but it's a bigger project and I don't want to dilute this month. Marcus, write down what you'd want it to show and we'll look at it for the Q4 roadmap."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 781.8,
+      "text": "Sure, I'll put a few bullets together."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 798.3,
+      "text": "Last thing from me, the Snowflake fix and SAML work both land in the same sprint so please don't add anything else for Daniel."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 817.3,
+      "text": "Understood, thanks everyone. Let's reconvene next Tuesday, and good luck with the Friday deadline, Sofia."
+    }
+  ],
+  "summary": {
+    "overview": "The product team reviewed September onboarding data, which showed setup checklist completion falling from 47 to 41 percent, with the biggest drop at the data source connection step. They agreed to ship a cheap read-only demo dashboard before investing in a full sample workspace. The group scoped SAML SSO for Okta and Azure AD after four deals named it a requirement, debated whether to gate it by plan, and settled on a 15 percent annual discount plus clearer tracked-user wording for the pricing page. Hannah reported September logo churn of 3.1 percent, mostly small accounts that never finished onboarding.",
+    "notes": [
+      "Setup checklist completion fell to 41 percent in September from 47 percent in August.",
+      "Step three, connecting a data source, has a 38 percent drop-off and is the biggest cliff in the funnel.",
+      "A static read-only demo dashboard will be built first, at an estimated three to four days, before committing to a two-sprint sample workspace.",
+      "Four deals listed SAML SSO as a hard requirement, one worth about 48 thousand dollars in ARR.",
+      "The first SSO release will cover SAML with Okta and Azure AD only, with SCIM deferred, at roughly four weeks of engineering.",
+      "Whether SSO is gated to the Enterprise plan was left open after Marcus warned Growth customers would see it as a bait and switch.",
+      "The pricing page will define what counts as a tracked user and offer a 15 percent discount for annual contracts.",
+      "September logo churn was 3.1 percent, with five of nine cancellations from small teams that never completed setup.",
+      "A Snowflake connector timeout fix for large warehouses is in review and should ship in the next release."
+    ],
+    "keywords": [
+      "onboarding",
+      "SSO",
+      "SAML",
+      "pricing",
+      "churn",
+      "demo dashboard",
+      "Snowflake",
+      "tracked user",
+      "annual discount"
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Kickoff and agenda",
+      "start": 0.0,
+      "summary": "Alex frames the week and the four topics on the agenda."
+    },
+    {
+      "title": "Onboarding funnel numbers",
+      "start": 57.1,
+      "summary": "Sofia shares that setup checklist completion fell to 41 percent in September."
+    },
+    {
+      "title": "SSO requirements",
+      "start": 271.2,
+      "summary": "Team discusses enterprise demand for SAML single sign-on and scoping."
+    },
+    {
+      "title": "Pricing page feedback",
+      "start": 456.8,
+      "summary": "Customer feedback on plan tiers, the seat-based model, and the proposed annual discount."
+    },
+    {
+      "title": "Churn review",
+      "start": 603.9,
+      "summary": "Hannah reports September logo churn and the main cancellation reasons."
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Design a read-only demo dashboard for the empty state after data source connect",
+      "assignee": "Sofia Alvarez",
+      "due_date": "2026-10-09",
+      "completed": true,
+      "start": 237.3
+    },
+    {
+      "text": "Write up the SAML SSO scope document with Okta and Azure AD only and share it for review",
+      "assignee": "Priya Nair",
+      "due_date": "2026-10-10",
+      "completed": true,
+      "start": 423.2
+    },
+    {
+      "text": "Draft the tracked user definition for the pricing page and send it to legal",
+      "assignee": "Alex Rivera",
+      "due_date": "2026-10-12",
+      "completed": false,
+      "start": 568.6
+    },
+    {
+      "text": "Schedule churn interviews with at least three of the five small accounts that cancelled in September",
+      "assignee": "Hannah Schmidt",
+      "due_date": "2026-10-16",
+      "completed": false,
+      "start": 709.1
+    },
+    {
+      "text": "Write a short wishlist of signals for an account health score to feed Q4 roadmap planning",
+      "assignee": "Marcus Johnson",
+      "due_date": "2026-10-14",
+      "completed": false,
+      "start": 770.8
+    }
+  ]
+}

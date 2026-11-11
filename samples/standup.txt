@@ -1,0 +1,20 @@
+[00:00:05] Priya Nair: Morning all, quick standup. Daniel, how's the SSO work looking?
+[00:00:14] Daniel Okafor: Azure AD login is working in staging now. I'm cleaning up error handling for expired certificates today.
+[00:00:31] Priya Nair: Any blockers on that?
+[00:00:36] Daniel Okafor: Just waiting on the final design for the metadata upload page, but Mei has a placeholder.
+[00:00:52] Mei Tanaka: Right, I'm using the placeholder and it's about seventy percent done. I should have a preview link by tomorrow.
+[00:01:05] Priya Nair: Great. Mei, how's the flaky test cleanup going?
+[00:01:14] Mei Tanaka: Better. I mocked the slow dashboard endpoint and the failure rate dropped from one in six to maybe one in twenty.
+[00:01:33] Priya Nair: That's a big improvement. Keep going until it's under one in fifty.
+[00:01:41] Tomas Novak: Can I go next? The ingestion rewrite is at about sixty percent. Idempotency keys are merged and duplicates are under zero point one percent.
+[00:02:02] Priya Nair: Nice. What about the latency regression from last week?
+[00:02:10] Tomas Novak: Daniel confirmed it was the composite index. We rolled it back and P95 is back to 2.1 seconds on the big tenant.
+[00:02:28] Daniel Okafor: I'll add a query plan check to the migration review so we catch that earlier.
+[00:02:39] Priya Nair: Good idea. Alex, anything from product?
+[00:02:46] Alex Rivera: Two things. The Harbor and Pine pilot kickoff is Wednesday, so the sanitized tenant needs to be ready by Tuesday evening.
+[00:03:05] Tomas Novak: It's set up already. I'm loading the sample data this afternoon.
+[00:03:14] Alex Rivera: Perfect. Second, Lumen Freight wants early access to SSO in staging, so can we create a test account for their IT lead?
+[00:03:30] Daniel Okafor: Sure, I'll make a staging tenant with Okta enabled and send the credentials through the secure channel.
+[00:03:44] Priya Nair: Okay, anything else? Otherwise let's get back to it.
+[00:03:51] Mei Tanaka: Just a reminder that I'm out Friday afternoon, so Daniel will review the upload component.
+[00:04:02] Priya Nair: Noted, thanks everyone.

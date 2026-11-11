@@ -1,0 +1,355 @@
+{
+  "title": "Q4 Roadmap Planning",
+  "date": "2026-10-20T15:00:00Z",
+  "platform": "zoom",
+  "duration": 852,
+  "tags": [
+    "Planning",
+    "Product"
+  ],
+  "participants": [
+    {
+      "name": "Alex Rivera",
+      "email": "alex@northwindlabs.io"
+    },
+    {
+      "name": "Liam O'Connor",
+      "email": "liam@northwindlabs.io"
+    },
+    {
+      "name": "Priya Nair",
+      "email": "priya.nair@northwindlabs.io"
+    },
+    {
+      "name": "Sofia Alvarez",
+      "email": "sofia.alvarez@northwindlabs.io"
+    },
+    {
+      "name": "Marcus Johnson",
+      "email": "marcus.johnson@northwindlabs.io"
+    },
+    {
+      "name": "Tomas Novak",
+      "email": "tomas.novak@northwindlabs.io"
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Alex Rivera",
+      "start": 0.0,
+      "text": "Alright, thanks for blocking the hour. The goal today is to leave with a Q4 roadmap we can actually commit to, which means we have to cut things. I'll put up the candidate list and we'll go through it."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 20.7,
+      "text": "And just to set the bar from my side, whatever we pick has to move either net revenue retention or new enterprise logos. I don't want a quarter of nice-to-haves."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 44.0,
+      "text": "Understood. We have seven candidates. SAML SSO, the onboarding revamp, a new pricing and packaging model, account health scores, a Snowflake connector rewrite, a mobile app for exec dashboards, and a public API v2."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 63.7,
+      "text": "Seven is not happening. With the current team we have maybe three and a half initiatives of capacity, and I'm including the two engineers Tomas is borrowing for the data pipeline."
+    },
+    {
+      "speaker": "Tomas Novak",
+      "start": 87.4,
+      "text": "I should say the pipeline work is not optional either. Query latency on the big tenants is up thirty percent since August, and if we don't fix the ingestion layer we'll see it in churn."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 110.4,
+      "text": "Okay, so let's score them rather than argue about each one. Revenue impact, effort, and confidence. Marcus, start with SSO, you have the pipeline numbers."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 134.3,
+      "text": "SSO is tied to about three hundred ten thousand dollars of open pipeline. Five deals have it as a stated requirement and a few more will hit it in security review. It's the cleanest revenue case on the list."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 151.8,
+      "text": "Effort is about four weeks for SAML with Okta and Azure AD. SCIM would be another three, so I'd leave that out."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 170.6,
+      "text": "SSO is a yes for me. Nobody on this call is going to argue with that."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 185.6,
+      "text": "Agreed, SSO is in. Next, the onboarding revamp. Sofia, you've got the latest numbers."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 212.3,
+      "text": "Checklist completion has been stuck around forty percent for six weeks. The demo dashboard we shipped helped a little, we got a three point bump, but the real fix is a guided first-run flow and better data source connection feedback."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 231.3,
+      "text": "Does it move revenue? I like it but I need the connection to numbers, not just a better experience."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 254.6,
+      "text": "It does through churn. Of the accounts that cancelled in Q3, more than half never completed setup. If we cut that churn by a third, that's roughly one point of net revenue retention."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 274.1,
+      "text": "One point of NRR is meaningful at our size, so I'd back it. But I don't want a six month redesign. What's the smallest version that works?"
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 295.9,
+      "text": "Three components, a guided checklist, a progress indicator for the data sync, and a first-value moment where we auto-build one dashboard from their connected source. I'd say six weeks of design and frontend together."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 315.3,
+      "text": "Six weeks for the frontend side is realistic if the auto-built dashboard reuses our templates. It gets much harder if it's custom per customer."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 334.3,
+      "text": "Reuse templates. Okay, onboarding is in at six weeks. That's SSO plus onboarding, which already takes most of the capacity."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 345.3,
+      "text": "Pricing and packaging next. Liam, you've been closest to this."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 374.7,
+      "text": "I think pricing is where we leave the most money on the table. Per-seat doesn't reflect value and customers keep telling us they want a flat platform fee with usage tiers. But it's also the riskiest to change because every existing customer has to be migrated."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 392.9,
+      "text": "I'd disagree on timing. Changing pricing in the middle of enterprise negotiations is asking for trouble. Prospects will wait for the new model and push deals into next year."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 406.5,
+      "text": "That's a fair point. What if we design it this quarter and only grandfather new customers in January?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 436.1,
+      "text": "I like that. Design and modeling in Q4, no engineering work yet, and we pilot it with the Harbor and Pine deal if they sign. Marcus, can you model how much revenue a flat fee plus usage tier would change?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 451.6,
+      "text": "Yes, I'll model it with the last four quarters of closed deals and share a spreadsheet."
+    },
+    {
+      "speaker": "Tomas Novak",
+      "start": 478.0,
+      "text": "Can I jump in on the technical constraint? Usage-based tiers mean we need accurate metering. Today our event counts have about a two percent error between the pipeline and the billing export. That would have to be fixed first."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 492.8,
+      "text": "That is a good argument for funding the ingestion work, it unblocks pricing as well as the latency problem."
+    },
+    {
+      "speaker": "Tomas Novak",
+      "start": 508.8,
+      "text": "Right. I'd propose we rewrite the ingestion batching and add idempotency keys. About five weeks for me and one backend engineer."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 524.8,
+      "text": "Five weeks of Tomas and an engineer, plus SSO, plus onboarding. That is the capacity. Are we sure that fits?"
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 552.5,
+      "text": "With SSO four weeks, onboarding six weeks across frontend and design, and ingestion five weeks, we can fit it if we start the onboarding work next week and nothing else lands. It's tight, I won't pretend otherwise."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 573.1,
+      "text": "Then something has to give. Account health scores, the exec mobile app, and API v2 are out of Q4. Any objection?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 593.8,
+      "text": "I'll object a little on health scores. Customer success asked for them and they connect to churn, which Liam cares about."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 616.2,
+      "text": "I hear you, but they depend on the ingestion fix because the signals need to be reliable. So they go first in Q1 right after ingestion lands. I'm fine telling customer success that directly."
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 627.2,
+      "text": "That works as long as there's a date."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 646.4,
+      "text": "We'll say the first week of January for design kickoff. Okay, Snowflake rewrite, is that fully out?"
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 666.9,
+      "text": "A partial one is already included. The timeout fix is going out this week, so I'd hold the rest of the rewrite until we see whether ingestion handles it."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 686.6,
+      "text": "Good. So the final Q4 list is SAML SSO, a streamlined onboarding revamp, the ingestion rewrite, and pricing design only. Let me read it back and then we'll assign owners."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 702.4,
+      "text": "Sounds right. Put the dates in writing, please. And I want a checkpoint in three weeks, not at the end of the quarter."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 721.6,
+      "text": "I'll publish the roadmap document tomorrow and set a checkpoint for the week of November 10."
+    },
+    {
+      "speaker": "Priya Nair",
+      "start": 742.2,
+      "text": "I'll turn this into sprint plans and tell my team what's landing when. Engineering kickoff for SSO is Monday."
+    },
+    {
+      "speaker": "Sofia Alvarez",
+      "start": 762.4,
+      "text": "I'll prepare the guided checklist designs for review in two weeks, and I'll book a design review for the first-value dashboard."
+    },
+    {
+      "speaker": "Tomas Novak",
+      "start": 780.9,
+      "text": "I'll write the ingestion design doc this week, including the idempotency approach and the metering tests."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 801.0,
+      "text": "And Alex, tell the board that health scores slip to Q1, I'd rather they hear it from us."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 818.2,
+      "text": "Thanks everyone, this was a hard one and I think we got to the right plan."
+    }
+  ],
+  "summary": {
+    "overview": "The leadership group narrowed seven candidate initiatives down to what a team with roughly three and a half initiatives of capacity can deliver. SAML SSO, a streamlined onboarding revamp, an ingestion pipeline rewrite, and pricing design work were committed, while account health scores, the executive mobile app, and API v2 were pushed out. Key arguments were the 310 thousand dollars of SSO pipeline, a one-point NRR gain from reducing setup-related churn, and the need for accurate metering before usage-based pricing. Owners and a three-week checkpoint were agreed.",
+    "notes": [
+      "Seven candidate initiatives were scored on revenue impact, effort, and confidence against a capacity of about three and a half.",
+      "SAML SSO is tied to about 310 thousand dollars of open pipeline across five deals and takes roughly four weeks, so it was approved immediately.",
+      "The onboarding revamp is funded at six weeks, with a guided checklist, a sync progress indicator, and an auto-built first dashboard from templates.",
+      "More than half of Q3 cancellations never finished setup, and cutting that churn by a third is worth about one point of net revenue retention.",
+      "Pricing and packaging will be modeled and designed in Q4 with no engineering work, and any new model applies to new customers from January.",
+      "Query latency on large tenants is up 30 percent since August and event counts differ by about 2 percent from the billing export.",
+      "The ingestion rewrite with idempotency keys will take about five weeks and unblocks both latency and usage metering.",
+      "Account health scores, the exec mobile app, and API v2 are out of Q4, with health scores starting design in the first week of January.",
+      "Liam asked for a checkpoint in three weeks rather than at the end of the quarter."
+    ],
+    "keywords": [
+      "Q4 roadmap",
+      "SAML SSO",
+      "onboarding",
+      "pricing",
+      "ingestion",
+      "churn",
+      "NRR",
+      "health scores",
+      "capacity",
+      "metering"
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Goals and candidate list",
+      "start": 0.0,
+      "summary": "Alex lays out the rules for the session and the candidate initiatives."
+    },
+    {
+      "title": "Scoring SSO and enterprise demand",
+      "start": 110.4,
+      "summary": "Marcus quantifies the pipeline tied to SAML SSO."
+    },
+    {
+      "title": "Onboarding revamp",
+      "start": 185.6,
+      "summary": "The team reviews activation data and decides how much of the onboarding redesign to fund."
+    },
+    {
+      "title": "Pricing and packaging model",
+      "start": 334.3,
+      "summary": "Debate over whether new pricing and packaging fits in the quarter."
+    },
+    {
+      "title": "Data pipeline and latency",
+      "start": 478.0,
+      "summary": "Tomas explains the ingestion rewrite and metering accuracy."
+    },
+    {
+      "title": "Cuts and what is out of scope",
+      "start": 573.1,
+      "summary": "The team decides which initiatives move to next quarter."
+    },
+    {
+      "title": "Final plan and owners",
+      "start": 686.6,
+      "summary": "Alex reads back the committed Q4 roadmap and assigns owners."
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Build a revenue model comparing per-seat pricing with a flat platform fee plus usage tiers",
+      "assignee": "Marcus Johnson",
+      "due_date": "2026-11-03",
+      "completed": true,
+      "start": 436.1
+    },
+    {
+      "text": "Publish the Q4 roadmap document with the four committed initiatives and schedule a checkpoint for November 10",
+      "assignee": "Alex Rivera",
+      "due_date": "2026-10-21",
+      "completed": true,
+      "start": 721.6
+    },
+    {
+      "text": "Convert the Q4 roadmap into sprint plans and start SAML SSO engineering on Monday",
+      "assignee": "Priya Nair",
+      "due_date": "2026-10-26",
+      "completed": true,
+      "start": 742.2
+    },
+    {
+      "text": "Prepare guided onboarding checklist and first-value dashboard designs for design review",
+      "assignee": "Sofia Alvarez",
+      "due_date": "2026-11-05",
+      "completed": false,
+      "start": 762.4
+    },
+    {
+      "text": "Write the ingestion rewrite design doc covering idempotency keys and metering accuracy tests",
+      "assignee": "Tomas Novak",
+      "due_date": "2026-10-27",
+      "completed": true,
+      "start": 780.9
+    },
+    {
+      "text": "Tell the board that account health scores move to Q1 and explain why",
+      "assignee": "Liam O'Connor",
+      "due_date": "2026-11-10",
+      "completed": false,
+      "start": 801.0
+    }
+  ]
+}

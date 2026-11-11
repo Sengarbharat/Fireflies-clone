@@ -1,0 +1,345 @@
+{
+  "title": "Investor Update Call - Lakeshore Ventures",
+  "date": "2026-11-10T20:00:00Z",
+  "platform": "zoom",
+  "duration": 907,
+  "tags": [
+    "Investors",
+    "Planning"
+  ],
+  "participants": [
+    {
+      "name": "Liam O'Connor",
+      "email": "liam@northwindlabs.io"
+    },
+    {
+      "name": "Alex Rivera",
+      "email": "alex@northwindlabs.io"
+    },
+    {
+      "name": "Marcus Johnson",
+      "email": "marcus.johnson@northwindlabs.io"
+    },
+    {
+      "name": "Catherine Doyle",
+      "email": "cdoyle@lakeshorevc.com"
+    },
+    {
+      "name": "Vikram Shah",
+      "email": "vikram@lakeshorevc.com"
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "Liam O'Connor",
+      "start": 0.0,
+      "text": "Catherine, Vikram, thanks for making time. I've got Alex and Marcus with me so we can go deeper on product and sales. I'll run through the headline numbers first and then leave plenty of room for your questions."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 18.9,
+      "text": "Perfect. And we have the deck, so feel free to skip anything that's in it."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 51.9,
+      "text": "Great. ARR closed October at four point two million, up from three point six at the end of June, so about seventeen percent growth in the quarter. Net revenue retention is one hundred eight percent and logo churn was two point eight percent in October, which is down from three point one in September."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 63.0,
+      "text": "That's a nice improvement on churn. What drove it?"
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 91.1,
+      "text": "Mostly a few small accounts we saved through proactive outreach, and the demo dashboard we shipped for the empty state, which gave us a small activation bump. I'll be honest, one month isn't a trend, so I wouldn't read too much into it."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 102.1,
+      "text": "Understood. What about cash and runway?"
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 129.4,
+      "text": "We have six point one million in the bank, burning about three hundred twenty thousand a month, so roughly nineteen months of runway. We're not planning to raise in the next two quarters unless something interesting changes."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 143.1,
+      "text": "That's comfortable. Marcus, can we hear about pipeline?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 169.6,
+      "text": "Sure. Open pipeline is one point nine million with a commit and best case of eight hundred forty thousand. Our Q4 target was six hundred fifty thousand of new ARR, but I'm forecasting about four fifty. The gap is almost entirely the deals stuck waiting for single sign-on."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 180.6,
+      "text": "How much is waiting on SSO?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 206.7,
+      "text": "Seven deals, about three hundred ten thousand dollars. We're shipping SAML in the second week of November, so I expect about half of that to close in Q4 and the rest in January."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 225.4,
+      "text": "I'd like to understand why SSO wasn't on the roadmap earlier. Two quarters ago I recall us talking about enterprise readiness."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 253.2,
+      "text": "That's a fair challenge. We prioritized self-serve conversion and the connector library, and we under-weighted how often enterprise security review would block deals. We caught up in the Q4 plan, but I would say it cost us roughly a quarter on those deals."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 267.6,
+      "text": "I appreciate the candor. What else will block enterprise deals?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 288.5,
+      "text": "SOC 2 Type 2, which should arrive in January, and a fair amount of pricing friction. Seat-based pricing doesn't match how larger customers want to buy."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 302.4,
+      "text": "Alex, I'd love to hear about pricing from the product side."
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 327.7,
+      "text": "We're designing a platform fee plus usage tiers, meant to replace per-seat. The thinking is that per-seat discourages sharing, and sharing is what makes analytics sticky. A pilot customer, a retailer with forty-two stores, told us they'd rather have a predictable flat number than count seats."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 338.7,
+      "text": "What's the risk of changing pricing?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 363.9,
+      "text": "Two risks. Migrating existing customers without upsetting them, and metering accuracy, since today our event counts are off by around two percent from the billing export. We're fixing that in an ingestion rewrite this quarter, so we won't launch usage tiers until the numbers are clean."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 375.8,
+      "text": "So the pricing launch is realistically early next year?"
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 395.2,
+      "text": "Yes, for new customers in January, and for existing customers on their renewals through the year. We won't force anyone to switch."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 413.9,
+      "text": "That seems measured. Where do you expect average contract value to land? Right now?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 434.5,
+      "text": "Today it's about twenty-eight thousand. Early modelling suggests thirty-five to forty for the platform fee model, mainly because we stop capping expansion at the seat count. But that's a model, not a result."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 453.1,
+      "text": "Okay, understood. Let me ask about product. What's the plan for the next two quarters?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 477.4,
+      "text": "In Q4 we're committed to four things, SAML SSO, an onboarding revamp, the ingestion rewrite, and pricing design. In Q1, account health scores and the pricing rollout, with an API v2 and the executive mobile app after that, if the data supports them."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 489.2,
+      "text": "Onboarding, tell me more. Is that a growth or a retention bet?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 511.9,
+      "text": "Both, but mainly retention. More than half of Q3 cancellations were accounts that never finished setup. Checklist completion was forty-one percent in September. If we get it to sixty, we think it's worth about one point of net revenue retention."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 525.2,
+      "text": "That's a large claim for one project. How confident are you?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 545.1,
+      "text": "Moderately, honestly. It's the best correlation we have, not a causal result. That's why we're running usability sessions and a staged rollout, so we can measure it rather than assume it."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 562.1,
+      "text": "I appreciate that. Now, hiring. What does the team look like?"
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 590.0,
+      "text": "We're twenty-six people. Engineering is eleven, and we're finishing a senior frontend hire this month. We made an offer to a candidate with a lot of dashboard performance experience, and I'm optimistic. After that, I'd like one more customer success hire in Q1."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 603.6,
+      "text": "And are you comfortable with the burn if you add those?"
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 626.0,
+      "text": "Yes. Both are already in the three hundred twenty thousand figure. We'd only exceed it if we decided to go after outbound sales aggressively, and we're not planning to."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 637.9,
+      "text": "Any competitive developments we should know about?"
+    },
+    {
+      "speaker": "Marcus Johnson",
+      "start": 664.9,
+      "text": "A competitor started giving away free implementation and a ninety-day trial on mid-market deals. We've seen it in two pipeline conversations, and a retailer we're piloting with mentioned it. I'm trying not to match it, we'd rather include onboarding help in a pilot than discount the product."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 680.0,
+      "text": "That's smart. Discounting is hard to walk back."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 691.0,
+      "text": "What's your biggest risk right now? Be honest."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 721.1,
+      "text": "Concentration of engineering effort. We've got four significant projects on a small team and almost no slack. If one slips, SSO is the one that matters, and a slip pushes revenue into next year. We mitigate that by cutting scope hard, and by not adding anything."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 737.3,
+      "text": "Is there something we can help with? I know a few security leads in retail and logistics who might do reference calls."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 758.4,
+      "text": "That would be really valuable. Reference calls for security reviews have been the slowest part of our deals. Alex can send you the details."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 778.0,
+      "text": "And on our side, we'd like to see a monthly metrics email with ARR, NRR, churn, and pipeline coverage. Can you do that?"
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 798.0,
+      "text": "Yes, I'll start with the November close. Marcus, please put together a list of deals that could use reference calls, and Alex, a short note on the SSO release."
+    },
+    {
+      "speaker": "Vikram Shah",
+      "start": 817.5,
+      "text": "And I'll make introductions to two security leads this week. Can you send me a two-line description of what you'd like me to say?"
+    },
+    {
+      "speaker": "Alex Rivera",
+      "start": 835.1,
+      "text": "Of course, I'll write that today and send it over, along with a note on the SSO release timing."
+    },
+    {
+      "speaker": "Catherine Doyle",
+      "start": 850.5,
+      "text": "Good. Let's talk again in early December after the SSO launch. Thanks everyone, this was a clear update."
+    },
+    {
+      "speaker": "Liam O'Connor",
+      "start": 867.2,
+      "text": "Thank you both. We'll send the metrics email and talk in December."
+    }
+  ],
+  "summary": {
+    "overview": "Liam, Alex and Marcus gave Lakeshore Ventures an update with ARR at 4.2 million dollars, net revenue retention at 108 percent, and October logo churn down to 2.8 percent, with about 19 months of runway. Marcus explained the Q4 forecast is about 450 thousand dollars against a 650 thousand target because seven deals worth roughly 310 thousand dollars are waiting on SSO. Alex outlined the move from per-seat pricing to a platform fee with usage tiers, expected in January, and the onboarding bet on retention. The investors asked about enterprise readiness and offered reference-call introductions in exchange for a monthly metrics email.",
+    "notes": [
+      "ARR closed October at 4.2 million dollars, up from 3.6 million at the end of June, and net revenue retention is 108 percent.",
+      "Logo churn improved from 3.1 percent in September to 2.8 percent in October, but Liam cautioned that one month is not a trend.",
+      "Cash is 6.1 million dollars with a burn of about 320 thousand a month, giving roughly 19 months of runway and no planned raise.",
+      "Q4 new ARR is forecast at about 450 thousand dollars against a 650 thousand target because seven deals worth about 310 thousand are blocked on SSO.",
+      "Liam acknowledged under-weighting enterprise security needs, which cost roughly a quarter on those deals.",
+      "The pricing plan is a platform fee plus usage tiers for new customers in January, held back until metering accuracy improves from a 2 percent error.",
+      "Average contract value is about 28 thousand dollars today and early modeling suggests 35 to 40 thousand under the new model.",
+      "The onboarding revamp is a retention bet, with Alex moderately confident it could add about one point of net revenue retention.",
+      "Lakeshore will introduce two security leads for reference calls and wants a monthly metrics email on ARR, NRR, churn, and pipeline coverage."
+    ],
+    "keywords": [
+      "ARR",
+      "NRR",
+      "churn",
+      "runway",
+      "SSO",
+      "pricing",
+      "platform fee",
+      "pipeline",
+      "onboarding",
+      "SOC 2"
+    ]
+  },
+  "chapters": [
+    {
+      "title": "Welcome and headline metrics",
+      "start": 0.0,
+      "summary": "Liam presents ARR, retention, and cash position."
+    },
+    {
+      "title": "Sales and pipeline",
+      "start": 143.1,
+      "summary": "Marcus shares Q4 pipeline, forecast, and the effect of SSO on deals."
+    },
+    {
+      "title": "Pricing and packaging",
+      "start": 302.4,
+      "summary": "Discussion of moving from per-seat to a platform fee with usage tiers."
+    },
+    {
+      "title": "Product roadmap",
+      "start": 453.1,
+      "summary": "Alex describes Q4 commitments and Q1 priorities."
+    },
+    {
+      "title": "Team and hiring",
+      "start": 562.1,
+      "summary": "Liam discusses hiring plans and the open frontend role."
+    },
+    {
+      "title": "Risks and asks",
+      "start": 680.0,
+      "summary": "The investors raise concerns and offer help with introductions."
+    }
+  ],
+  "action_items": [
+    {
+      "text": "Start sending a monthly investor metrics email with ARR, NRR, churn, and pipeline coverage",
+      "assignee": "Liam O'Connor",
+      "due_date": "2026-12-01",
+      "completed": false,
+      "start": 778.0
+    },
+    {
+      "text": "List the open deals that would benefit from security reference calls and send it to Vikram",
+      "assignee": "Marcus Johnson",
+      "due_date": "2026-11-14",
+      "completed": false,
+      "start": 798.0
+    },
+    {
+      "text": "Send Vikram a short description for security-lead introductions and a note on the SSO release timing",
+      "assignee": "Alex Rivera",
+      "due_date": "2026-11-11",
+      "completed": false,
+      "start": 835.1
+    }
+  ]
+}
